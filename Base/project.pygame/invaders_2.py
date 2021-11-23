@@ -9,7 +9,7 @@ WHITE = (255,255,255)
 BLUE = (50,50,255) 
 YELLOW = (255,255,0)
 RED = (255,0,0)
-# -- Initialise PyGame -
+# -- Initialise PyGame
 pygame.init() 
 # -- Blank Screen 
 size = (640,480) 
