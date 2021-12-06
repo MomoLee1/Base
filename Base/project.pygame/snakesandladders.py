@@ -1,6 +1,7 @@
 import pygame 
 import random 
 
+#initialise colours 
 BLACK = (0,0,0) 
 WHITE = (255,255,255) 
 BLUE = (50,50,255) 
@@ -14,18 +15,20 @@ class game():
         #for...
 #endclass
 
+#gameboard class
 class gameboard():
     def __init__(self):
         self.dice = dice(6)
         self.player_list = []
         p1 = player(0, BLUE)
         p2 = player(0, YELLOW)
-        self.player_list.add(p1) # do you need to define the player_list as smth first
+        self.player_list.add(p1)
         self.player_list.add(p2)
         self.snake_list = snake_list
         self.ladder_list = ladder_list
 #end class
 
+#gateways superclass
 class gateways():
     def __init__(self, enterpos, exitpos):
         self.enterpos = enterpos
@@ -43,6 +46,7 @@ class gateways():
 #s.start = 32
 #s_list.append(s)
 
+#snakes childclass
 class snakes(gateways):
     def __init__(self):
         super().__init__() #this takes attributes from the parent class
@@ -59,6 +63,7 @@ class snakes(gateways):
             #next - change names to snakes
 #end class
 
+#ladder childclass
 class ladders(gateways):
     def __init__(self):
         super().__init__(self)
@@ -75,6 +80,7 @@ class ladders(gateways):
 
 #end class
 
+#player class
 class player():
     def __init__(self, pos, colour):
         self.pos = pos
@@ -86,6 +92,7 @@ class player():
         return self.pos
 #end class
 
+#dice class
 class dice():
     def __init__(self, numberoffaces):
         self.numberoffaces = numberoffaces 
