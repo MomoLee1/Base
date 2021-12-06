@@ -24,7 +24,7 @@ class Game(pygame.sprite.Sprite):
         # Call the sprite constructor 
         super().__init__() 
     # Class update function - runs for each pass through the game loop 
-    def update(self): 
+    #def update(self): 
         #...
     #End Procedure
 #End Class
@@ -94,7 +94,7 @@ class Player(pygame.sprite.Sprite):
     def update(self): 
         self.rect.x = self.rect.x + self.speed
          # -- User input and controls
-        for event in pygame.event.get(): 
+        for event in events: 
             if event.type == pygame.KEYDOWN: # - a key is down 
                 if event.key == pygame.K_LEFT: # - if the left key pressed
                     self.player_set_speed(-3) # speed set to -3
@@ -168,13 +168,17 @@ for x in range (number_of_invaders):
 player = Player(YELLOW, 10, 10)
 all_sprites_group.add(player)
 
+#event
+
 
 # -- Manages how fast screen refreshes 
 clock = pygame.time.Clock() 
 
 ### -- Game Loop 
-while not done:
-    for event in pygame.event.get(): 
+while not done:#
+    events = pygame.event.get() #- this allows two events
+    #this is wrong - doesn't allow two events? - only the first event works - how to make it so both work?
+    for event in events: 
         if event.type == pygame.QUIT: 
             done = True 
     # -- Game logic goes after this comment
