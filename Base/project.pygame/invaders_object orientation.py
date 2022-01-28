@@ -94,7 +94,7 @@ class Player(pygame.sprite.Sprite):
     def update(self): 
         self.rect.x = self.rect.x + self.speed
          # -- User input and controls
-        for event in events: 
+        for event in events: #-even this is unnecessary for some reason?
             if event.type == pygame.KEYDOWN: # - a key is down 
                 if event.key == pygame.K_LEFT: # - if the left key pressed
                     self.player_set_speed(-3) # speed set to -3
